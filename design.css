@@ -133,3 +133,92 @@ body {
         max-width: 100%;
     }
 }
+
+/* -------------------- */
+/* Skills section       */
+/* -------------------- */
+.skills {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1d4ed8;
+}
+
+/* Grid layout */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+/* Skill bubble base */
+.skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.skill img {
+    max-width: 65%;
+    max-height: 65%;
+    object-fit: contain;
+}
+
+/* Hover effect */
+.skill:hover {
+    transform: translateY(-8px) scale(1.08);
+    box-shadow: 0 25px 45px rgba(56, 189, 248, 0.35);
+}
+
+/* Sizes based on experience */
+.size-xl {
+    width: 140px;
+    height: 140px;
+}
+
+.size-lg {
+    width: 120px;
+    height: 120px;
+}
+
+.size-md {
+    width: 100px;
+    height: 100px;
+}
+
+.size-sm {
+    width: 80px;
+    height: 80px;
+}
+
+.size-xs {
+    width: 65px;
+    height: 65px;
+}
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+    .skills-grid {
+        gap: 18px;
+    }
+
+    .size-xl { width: 120px; height: 120px; }
+    .size-lg { width: 105px; height: 105px; }
+}
