@@ -1,65 +1,57 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    background: #0f0f0f;
-    color: white;
-    font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #e8f4ff, #f6fbff);
+    color: #1f2d3d;
 }
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.intro {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-.hero-content {
-    display: flex;
-    gap: 60px;
-    align-items: center;
-}
-
-.intro-text {
-    max-width: 400px;
-}
-
-.intro-text h1 {
-    font-size: 3rem;
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #8ecbff;
     margin-bottom: 20px;
 }
 
-.intro-text p {
-    font-size: 1.2rem;
-    opacity: 0.85;
+h1 {
+    margin-bottom: 10px;
 }
 
-/* LOGO CLOUD */
-
-.logo-cloud {
-    position: relative;
-    width: 420px;
-    height: 420px;
-    border-radius: 50%;
+.intro-text {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
 }
 
-.logo {
-    position: absolute;
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Basis */
+.skill {
     object-fit: contain;
     transition: transform 0.2s ease;
-    pointer-events: auto;
 }
 
-.logo:hover {
-    transform: scale(1.3) !important;
-    z-index: 10;
+.skill:hover {
+    transform: scale(1.1);
 }
 
-/* Sizes */
-.logo.big { width: 90px; }
-.logo.medium { width: 70px; }
-.logo.small { width: 50px; }
-.logo.tiny { width: 40px; }
+/* Grootte op basis van uren */
+.xlarge { width: 110px; }
+.large  { width: 95px; }
+.medium { width: 80px; }
+.small  { width: 65px; }
+.xsmall { width: 55px; }
+.tiny   { width: 40px; }
