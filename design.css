@@ -1,6 +1,4 @@
-/* -------------------- */
-/* Reset & base styling */
-/* -------------------- */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -10,21 +8,14 @@
 
 body {
     color: #0f172a;
-    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-/* -------------------- */
-/* Animated background  */
-/* -------------------- */
+/* Background */
 .background {
     position: fixed;
     inset: 0;
-    background: linear-gradient(
-        120deg,
-        #cfe9ff,
-        #e0f2ff,
-        #b6dcff
-    );
+    background: linear-gradient(120deg, #cfe9ff, #e0f2ff, #b6dcff);
     background-size: 300% 300%;
     animation: gradientMove 15s ease infinite;
     z-index: -1;
@@ -36,119 +27,66 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* -------------------- */
-/* Intro section        */
-/* -------------------- */
+/* Intro */
 .intro {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Glassmorphism card */
+/* Glass card */
 .intro-container {
     display: flex;
-    align-items: center;
     gap: 40px;
+    align-items: center;
     padding: 50px;
     max-width: 900px;
     width: 100%;
-
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(14px);
     border-radius: 24px;
-
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-
+    box-shadow: 0 20px 40px rgba(0,0,0,.1);
     animation: fadeUp 1s ease forwards;
 }
 
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* -------------------- */
-/* Profile image        */
-/* -------------------- */
 .profile-pic {
     width: 210px;
     height: 210px;
     object-fit: cover;
     border-radius: 18px;
-
     border: 4px solid transparent;
     background:
         linear-gradient(#fff, #fff) padding-box,
         linear-gradient(135deg, #4facfe, #00c6ff) border-box;
-
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.profile-pic:hover {
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: 0 20px 40px rgba(79, 172, 254, 0.4);
-}
-
-/* -------------------- */
-/* Text styling         */
-/* -------------------- */
+/* Text */
 .intro-text h1 {
     font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-
     background: linear-gradient(135deg, #1d4ed8, #38bdf8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .intro-text p {
+    margin-top: 16px;
     font-size: 1.15rem;
     line-height: 1.7;
-    max-width: 420px;
-    color: #1e293b;
 }
 
-/* -------------------- */
-/* Responsive           */
-/* -------------------- */
-@media (max-width: 768px) {
-    .intro-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro-text p {
-        max-width: 100%;
-    }
-}
-
-/* -------------------- */
-/* Skills section       */
-/* -------------------- */
+/* Skills */
 .skills {
-    margin-top: 60px;
+    margin-top: 70px;
     text-align: center;
 }
 
-.skills h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #1d4ed8;
-}
-
-/* Grid layout */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -156,69 +94,96 @@ body {
     gap: 24px;
 }
 
-/* Skill bubble base */
 .skill {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255,255,255,.6);
     backdrop-filter: blur(10px);
     border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    transition: transform .3s ease;
+}
 
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
+.skill:hover {
+    transform: translateY(-6px) scale(1.08);
 }
 
 .skill img {
     max-width: 65%;
-    max-height: 65%;
-    object-fit: contain;
 }
 
-/* Hover effect */
-.skill:hover {
-    transform: translateY(-8px) scale(1.08);
-    box-shadow: 0 25px 45px rgba(56, 189, 248, 0.35);
+/* Sizes */
+.size-xl { width: 140px; height: 140px; }
+.size-lg { width: 120px; height: 120px; }
+.size-md { width: 100px; height: 100px; }
+.size-sm { width: 80px; height: 80px; }
+.size-xs { width: 65px; height: 65px; }
+
+/* Internships */
+.internships {
+    margin-top: 90px;
+    max-width: 900px;
+    width: 100%;
 }
 
-/* Sizes based on experience */
-.size-xl {
-    width: 140px;
-    height: 140px;
+.internship-card {
+    background: rgba(255,255,255,.65);
+    backdrop-filter: blur(14px);
+    border-radius: 22px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.1);
+    overflow: hidden;
+    max-height: 120px;
+    transition: max-height .6s ease;
 }
 
-.size-lg {
-    width: 120px;
-    height: 120px;
+.internship-card:hover {
+    max-height: 900px;
 }
 
-.size-md {
-    width: 100px;
-    height: 100px;
+.internship-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
-.size-sm {
-    width: 80px;
-    height: 80px;
+.company-logo {
+    width: 70px;
 }
 
-.size-xs {
-    width: 65px;
-    height: 65px;
+.internship-content {
+    margin-top: 25px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: .4s ease;
 }
 
-/* Mobile friendly */
+.internship-card:hover .internship-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.internship-images {
+    display: flex;
+    gap: 30px;
+}
+
+.internship-images img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .skills-grid {
-        gap: 18px;
+    .intro-container {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .size-xl { width: 120px; height: 120px; }
-    .size-lg { width: 105px; height: 105px; }
+    .internship-images {
+        flex-direction: column;
+    }
 }
