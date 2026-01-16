@@ -64,8 +64,8 @@ section {
 /* ---------- Gists Grid ---------- */
 .gists-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  grid-auto-rows: 350px; /* Each container fixed height */
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-auto-rows: 250px;                 /* height of each card */
   gap: 20px;
 }
 
@@ -74,17 +74,18 @@ section {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 10px;
-  overflow: auto; /* Scroll inside the card */
+  overflow: auto;       /* scroll inside the card */
+  max-height: 250px;    /* limit card height */
 }
 
-/* Makes scrollbars visible if content overflows */
+/* Optional: make scrollbars visible */
 .gist-card::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .gist-card::-webkit-scrollbar-thumb {
   background-color: #0284c7;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 /* ---------- Footer ---------- */
