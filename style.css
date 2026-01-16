@@ -47,10 +47,10 @@ h2 {
   text-align: center;
 }
 
-/* ---------- Project Cards 2x1 ---------- */
-.projects-grid-2x1 {
+/* ---------- Project Cards ---------- */
+.projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
   gap: 20px;
 }
 
