@@ -1,9 +1,9 @@
-/* ---------- General Styles ---------- */
+/* ---------- General ---------- */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background-color: #e0f2ff; /* Light blue background */
-  color: #1e3a8a;           /* Dark blue text */
+  background-color: #e0f2ff;
+  color: #1e3a8a;
   line-height: 1.6;
 }
 
@@ -47,15 +47,18 @@ h2 {
   text-align: center;
 }
 
-/* ---------- Project Cards ---------- */
+/* ---------- Projects Grid ---------- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
   gap: 20px;
+  justify-items: center;
 }
 
 .card {
   background-color: #f0f9ff;
+  width: 100%;
+  max-width: 400px;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -75,19 +78,19 @@ h2 {
 .gists-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-auto-rows: 0;
   gap: 20px;
+  justify-items: center;
 }
 
 .gist-card {
   background-color: #f0f9ff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1; /* square */
   padding: 10px;
-
-  aspect-ratio: 1 / 1;   /* square */
-  overflow: auto;        /* scroll inside card */
-  max-height: 350px;     /* limits height for scroll */
+  overflow: auto;
 }
 
 /* Scrollbar styling */
