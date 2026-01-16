@@ -1,109 +1,90 @@
-/* ---------- General Styles ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  background-color: #e0f2ff; /* Light blue background */
-  color: #1e3a8a;           /* Dark blue text */
-  line-height: 1.6;
+    font-family: Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: white;
 }
 
-h1, h2, h3 {
-  margin: 0 0 10px 0;
+/* HERO SECTION */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
 }
 
-a {
-  text-decoration: none;
+.hero-content {
+    display: flex;
+    gap: 40px;
+    max-width: 900px;
+    align-items: center;
 }
 
-/* ---------- Header ---------- */
-header {
-  background-color: #bae6fd;
-  padding: 60px 20px;
-  text-align: center;
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
 }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+.intro-text h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
 }
 
-header p {
-  font-size: 1.2rem;
-  color: #1e40af;
+.intro-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
-/* ---------- Main Sections ---------- */
-main {
-  padding: 40px 20px;
+/* SKILLS SECTION */
+
+.skills {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #161616;
 }
 
-section {
-  margin-bottom: 60px;
+.skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  text-align: center;
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-/* ---------- Project Cards ---------- */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+/* Base skill style */
+.skill {
+    transition: transform 0.2s ease;
 }
 
-.card {
-  background-color: #f0f9ff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+.skill:hover {
+    transform: scale(1.1);
 }
 
-.card:hover {
-  transform: translateY(-5px);
+/* Size by experience */
+.skill.big {
+    width: 120px;
 }
 
-.card a {
-  color: #0284c7;
-  font-weight: bold;
+.skill.medium {
+    width: 90px;
 }
 
-/* ---------- Gists Grid ---------- */
-.gists-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-auto-rows: 0;
-  gap: 20px;
-}
-
-.gist-card {
-  background-color: #f0f9ff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 10px;
-
-  aspect-ratio: 1 / 1;   /* square */
-  overflow: auto;        /* scroll inside card */
-  max-height: 350px;     /* limits height for scroll */
-}
-
-/* Scrollbar styling */
-.gist-card::-webkit-scrollbar {
-  width: 6px;
-}
-
-.gist-card::-webkit-scrollbar-thumb {
-  background-color: #0284c7;
-  border-radius: 3px;
-}
-
-/* ---------- Footer ---------- */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #bae6fd;
-  font-weight: bold;
+.skill.small {
+    width: 60px;
 }
