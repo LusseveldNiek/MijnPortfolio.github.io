@@ -1,94 +1,65 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const area = document.getElementById("bubble-area");
-    const bubbles = [...document.querySelectorAll(".bubble")];
+const container = document.getElementById("bubbleContainer");
 
-    const mouse = { x: -9999, y: -9999, r: 120 };
+const logos = [
+    { name: "CsharpLogo.png", size: 120 },
+    { name: "UnityLogo.png", size: 120 },
+    { name: "GithubLogo.png", size: 120 },
 
-    area.addEventListener("mousemove", e => {
-        const rect = area.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-    });
+    { name: "KritaLogo.png", size: 90 },
+    { name: "BlenderLogo.png", size: 90 },
+    { name: ".NetLogo.png", size: 90 },
 
-    area.addEventListener("mouseleave", () => {
-        mouse.x = -9999;
-        mouse.y = -9999;
-    });
+    { name: "TrelloLogo.png", size: 70 },
+    { name: "FlauiLogo.png", size: 70 },
+    { name: "ReqnrollLogo.png", size: 70 },
+    { name: "JavascriptLogo.png", size: 70 },
+    { name: "N8nLogo.png", size: 70 },
 
-    function getSpeedMultiplier(b) {
-        if (b.classList.contains("very-big")) return 0.4;
-        if (b.classList.contains("big")) return 0.6;
-        if (b.classList.contains("normal")) return 0.9;
-        if (b.classList.contains("small")) return 1.2;
-        return 1;
-    }
+    { name: "DevexpressLogo.png", size: 50 },
+    { name: "DevopsLogo.png", size: 50 },
+    { name: "HtmlLogo.png", size: 50 }
+];
 
-    function initBubbles() {
-        bubbles.forEach(b => {
-            const w = b.offsetWidth || 80;
-            const h = b.offsetHeight || 80;
+const bubbles = [];
 
-            b.x = Math.random() * (area.clientWidth - w);
-            b.y = Math.random() * (area.clientHeight - h);
+logos.forEach(logo => {
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
+    bubble.style.width = bubble.style.height = `${logo.size}px`;
 
-            const speed = getSpeedMultiplier(b);
-            b.vx = (Math.random() - 0.5) * 2 * speed;
-            b.vy = (Math.random() - 0.5) * 2 * speed;
+    const img = document.createElement("img");
+    img.src = logo.name;
 
-            b.style.left = b.x + "px";
-            b.style.top = b.y + "px";
-        });
+    bubble.appendChild(img);
+    container.appendChild(bubble);
 
-        loop();
-    }
+    const bubbleData = {
+        el: bubble,
+        x: Math.random() * (container.clientWidth - logo.size),
+        y: Math.random() * (container.clientHeight - logo.size),
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        size: logo.size
+    };
 
-    function loop() {
-        bubbles.forEach(b => {
-            const w = b.offsetWidth || 80;
-            const h = b.offsetHeight || 80;
+    bubbles.push(bubbleData);
+});
 
-            b.x += b.vx;
-            b.y += b.vy;
-
-            if (b.x <= 0 || b.x + w >= area.clientWidth) b.vx *= -1;
-            if (b.y <= 0 || b.y + h >= area.clientHeight) b.vy *= -1;
-
-            const cx = b.x + w / 2;
-            const cy = b.y + h / 2;
-            const dx = cx - mouse.x;
-            const dy = cy - mouse.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-
-            if (dist < mouse.r && dist !== 0) {
-                const force = (mouse.r - dist) / mouse.r;
-                const speedFactor = getSpeedMultiplier(b);
-
-                b.vx += (dx / dist) * force * speedFactor;
-                b.vy += (dy / dist) * force * speedFactor;
-            }
-
-            b.style.left = b.x + "px";
-            b.style.top = b.y + "px";
-        });
-
-        requestAnimationFrame(loop);
-    }
-
-    // Wait until all images have sizes
-    let loaded = 0;
+function animate() {
+    const width = container.clientWidth;
+    const height = container.clientHeight;
 
     bubbles.forEach(b => {
-        if (b.complete) {
-            loaded++;
-        } else {
-            b.onload = () => {
-                loaded++;
-                if (loaded === bubbles.length) initBubbles();
-            };
-        }
+        b.x += b.vx;
+        b.y += b.vy;
+
+        if (b.x <= 0 || b.x + b.size >= width) b.vx *= -1;
+        if (b.y <= 0 || b.y + b.size >= height) b.vy *= -1;
+
+        b.el.style.transform = `translate(${b.x}px, ${b.y}px)`;
     });
 
-    if (loaded === bubbles.length) {
-        initBubbles();
-    }
-});
+    requestAnimationFrame(animate);
+}
+
+animate();
