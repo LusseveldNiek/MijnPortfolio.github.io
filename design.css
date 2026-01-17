@@ -61,8 +61,9 @@ body {
 /* WHITE CONTAINER */
 .bubble-container {
     position: relative;
-    width: 100%;
+    width: 70%;
     height: 420px;
+    margin: 0 auto; /* center it */
     background: #f9f9f9;
     border-radius: 20px;
     overflow: hidden;
