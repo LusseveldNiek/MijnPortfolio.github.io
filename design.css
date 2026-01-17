@@ -141,3 +141,53 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* physics container */
+.skills-physics {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+}
+
+/* bubble logos */
+.logo {
+    position: absolute;
+    background: rgba(255,255,255,.75);
+    border-radius: 50%;
+    padding: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.12);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* sizes */
+.logo.big {
+    width: 140px;
+    height: 140px;
+}
+
+.logo.medium {
+    width: 110px;
+    height: 110px;
+}
+
+.logo.small {
+    width: 85px;
+    height: 85px;
+}
+
+.logo.tiny {
+    width: 65px;
+    height: 65px;
+}
+
+.logo img,
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    object-fit: contain;
+}
