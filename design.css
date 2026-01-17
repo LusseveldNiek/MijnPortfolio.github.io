@@ -1,3 +1,4 @@
+/* reset */
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +10,7 @@ body {
     color: #0f172a;
 }
 
-/* Background */
+/* background */
 .background {
     position: fixed;
     inset: 0;
@@ -25,7 +26,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Layout */
+/* layout */
 .intro {
     min-height: 100vh;
     padding: 40px;
@@ -34,7 +35,7 @@ body {
     align-items: center;
 }
 
-/* Intro card */
+/* intro card */
 .intro-container {
     display: flex;
     gap: 40px;
@@ -59,21 +60,7 @@ body {
         linear-gradient(135deg, #4facfe, #00c6ff) border-box;
 }
 
-/* Text */
-.intro-text h1 {
-    font-size: 3rem;
-    background: linear-gradient(135deg, #1d4ed8, #38bdf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.intro-text p {
-    margin-top: 16px;
-    font-size: 1.15rem;
-    line-height: 1.7;
-}
-
-/* Section headers spacing */
+/* sections */
 .skills,
 .internships {
     margin-top: 140px;
@@ -87,57 +74,46 @@ body {
     text-align: center;
 }
 
-/* Skills container */
+/* skills container */
 .skills-wrapper {
     background: rgba(255,255,255,.65);
     backdrop-filter: blur(14px);
     border-radius: 24px;
-    padding: 50px;
+    padding: 40px;
     box-shadow: 0 20px 40px rgba(0,0,0,.1);
 }
 
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 28px;
+.skills-physics {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
 }
 
-/* Skill bubbles */
+/* bubbles */
 .skill {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,.7);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,.75);
     border-radius: 50%;
     box-shadow: 0 10px 25px rgba(0,0,0,.12);
-    animation: float 5s ease-in-out infinite;
-    transition: transform .3s ease;
-}
-
-.skill:hover {
-    transform: translateY(-8px) scale(1.1);
+    cursor: pointer;
 }
 
 .skill img {
     max-width: 65%;
+    pointer-events: none;
 }
 
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-/* Sizes */
+/* sizes */
 .size-xl { width: 140px; height: 140px; }
 .size-lg { width: 120px; height: 120px; }
 .size-md { width: 100px; height: 100px; }
 .size-sm { width: 80px; height: 80px; }
 .size-xs { width: 65px; height: 65px; }
 
-/* Internships */
+/* internships (origineel gedrag) */
 .internship-card {
     background: rgba(255,255,255,.65);
     backdrop-filter: blur(14px);
@@ -152,10 +128,6 @@ body {
 
 .internship-card:hover {
     max-height: 600px;
-}
-
-.internship-header h3 {
-    margin-bottom: 6px;
 }
 
 .internship-content {
