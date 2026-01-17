@@ -17,7 +17,8 @@ const logos = [
 
     { name: "DevexpressLogo.png", size: 50 },
     { name: "DevopsLogo.png", size: 50 },
-    { name: "HtmlLogo.png", size: 50 }
+    { name: "HtmlLogo.png", size: 50 },
+    { name: "UnrealengineLogo.png", size: 50 }
 ];
 
 const bubbles = [];
