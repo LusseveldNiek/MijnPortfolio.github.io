@@ -7,7 +7,7 @@ const logos = [
 
     { name: "KritaLogo.png", size: 90 },
     { name: "BlenderLogo.png", size: 90 },
-    { name: ".NetLogo.png", size: 90 },
+    { name: "NetLogo.png", size: 90 },
 
     { name: "TrelloLogo.png", size: 70 },
     { name: "FlauiLogo.png", size: 70 },
