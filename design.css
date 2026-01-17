@@ -1,4 +1,3 @@
-/* reset */
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +27,6 @@ body {
 
 /* layout */
 .intro {
-    min-height: 100vh;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -37,45 +35,62 @@ body {
 
 /* intro card */
 .intro-container {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    padding: 50px;
     max-width: 900px;
     width: 100%;
+    display: flex;
+    gap: 40px;
+    padding: 50px;
     background: rgba(255,255,255,.65);
     backdrop-filter: blur(14px);
     border-radius: 24px;
     box-shadow: 0 20px 40px rgba(0,0,0,.1);
 }
 
-.profile-pic {
+/* profile photo */
+.pfp-frame {
     width: 210px;
     height: 210px;
+    padding: 4px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+}
+
+.pfp-frame img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 18px;
-    border: 4px solid transparent;
-    background:
-        linear-gradient(#fff, #fff) padding-box,
-        linear-gradient(135deg, #4facfe, #00c6ff) border-box;
+    border-radius: 16px;
+    background: white;
+}
+
+/* text */
+.intro-text h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-text p {
+    margin-top: 16px;
+    font-size: 1.15rem;
+    line-height: 1.7;
 }
 
 /* sections */
-.skills,
-.internships {
+.skills {
     margin-top: 140px;
     max-width: 900px;
     width: 100%;
 }
 
-.skills h2,
-.internships h2 {
+.skills h2 {
     margin-bottom: 40px;
     text-align: center;
 }
 
-/* skills container */
-.skills-wrapper {
+/* skills card */
+.skills-card {
     background: rgba(255,255,255,.65);
     backdrop-filter: blur(14px);
     border-radius: 24px;
@@ -83,111 +98,26 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,.1);
 }
 
-.skills-physics {
+#bubble-area {
     position: relative;
     height: 420px;
     overflow: hidden;
 }
 
-/* bubbles */
-.skill {
+/* bubble base */
+.bubble {
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,.75);
     border-radius: 50%;
-    box-shadow: 0 10px 25px rgba(0,0,0,.12);
-    cursor: pointer;
-}
-
-.skill img {
-    max-width: 65%;
-    pointer-events: none;
-}
-
-/* sizes */
-.size-xl { width: 140px; height: 140px; }
-.size-lg { width: 120px; height: 120px; }
-.size-md { width: 100px; height: 100px; }
-.size-sm { width: 80px; height: 80px; }
-.size-xs { width: 65px; height: 65px; }
-
-/* internships (origineel gedrag) */
-.internship-card {
-    background: rgba(255,255,255,.65);
-    backdrop-filter: blur(14px);
-    border-radius: 22px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 15px 35px rgba(0,0,0,.1);
-    overflow: hidden;
-    max-height: 110px;
-    transition: max-height .6s ease;
-}
-
-.internship-card:hover {
-    max-height: 600px;
-}
-
-.internship-content {
-    margin-top: 20px;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: .4s ease;
-}
-
-.internship-card:hover .internship-content {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* physics container */
-.skills-physics {
-    position: relative;
-    height: 420px;
-    overflow: hidden;
-}
-
-/* bubble logos */
-.logo {
-    position: absolute;
-    background: rgba(255,255,255,.75);
-    border-radius: 50%;
+    background: rgba(255,255,255,.8);
     padding: 14px;
     box-shadow: 0 10px 25px rgba(0,0,0,.12);
-    cursor: pointer;
     user-select: none;
+    pointer-events: none;
+    object-fit: contain;
 }
 
 /* sizes */
-.logo.big {
-    width: 140px;
-    height: 140px;
-}
-
-.logo.medium {
-    width: 110px;
-    height: 110px;
-}
-
-.logo.small {
-    width: 85px;
-    height: 85px;
-}
-
-.logo.tiny {
-    width: 65px;
-    height: 65px;
-}
-
-.logo img,
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo {
-    object-fit: contain;
-}
+.very-big { width: 160px; height: 160px; }
+.big      { width: 130px; height: 130px; }
+.normal   { width: 100px; height: 100px; }
+.small    { width: 75px;  height: 75px;  }
