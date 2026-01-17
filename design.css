@@ -136,3 +136,7 @@ body {
     margin-bottom: 20px;
     box-shadow: 0 15px 35px rgba(0,0,0,.1);
 }
+
+.bubble[data-broken="true"] {
+    background: radial-gradient(circle at 30% 30%, #ff6b6b, #c92a2a);
+}
