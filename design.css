@@ -71,6 +71,7 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+    margin-bottom: 20px;
 }
 
 /* BUBBLES */
@@ -95,6 +96,8 @@ body {
     margin: 60px auto 80px auto;
     width: 70%;
     max-width: 900px;
+    margin-top: 20px;
+    margin-bottom: 80px;
 }
 
 .about-links-inner p {
