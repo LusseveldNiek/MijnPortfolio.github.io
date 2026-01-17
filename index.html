@@ -1,64 +1,43 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio – Niek Lusseveld</title>
+    <meta charset="UTF-8" />
+    <title>Niek Lusseveld – Portfolio</title>
 
-    <link rel="stylesheet" href="design.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="design.css" />
 </head>
-
 <body>
-<div class="background"></div>
 
-<header class="intro">
-
-    <div class="intro-container">
-        <div class="pfp-frame">
-            <img src="profile.png" alt="Profielfoto">
-        </div>
-
+    <!-- INTRO SECTION -->
+    <section class="intro">
         <div class="intro-text">
-            <h1>Niek Lusseveld</h1>
+            <h1>Hello, I’m <span class="accent">Niek</span></h1>
             <p>
-                Creatieve developer met een passie voor design, technologie en
-                het bouwen van mooie digitale ervaringen.
+                I’m a software developer with experience in game development,
+                automation, backend systems, and tooling.  
+                I enjoy building clean, efficient systems and experimenting
+                with new technologies.
             </p>
         </div>
-    </div>
 
-    <section class="skills">
-        <h2>Skills</h2>
-
-        <div class="skills-card">
-            <div id="bubble-area">
-                <!-- Very big -->
-                <img src="icons/CsharpLogo.png" class="bubble very-big">
-                <img src="icons/UnityLogo.png" class="bubble very-big">
-                <img src="icons/GithubLogo.png" class="bubble very-big">
-
-                <!-- Big -->
-                <img src="icons/KritaLogo.png" class="bubble big">
-                <img src="icons/BlenderLogo.png" class="bubble big">
-                <img src="icons/DotNetLogo.png" class="bubble big">
-
-                <!-- Normal -->
-                <img src="icons/TrelloLogo.png" class="bubble normal">
-                <img src="icons/FlauiLogo.png" class="bubble normal">
-                <img src="icons/ReqnrollLogo.png" class="bubble normal">
-                <img src="icons/JavascriptLogo.png" class="bubble normal">
-                <img src="icons/N8nLogo.png" class="bubble normal">
-
-                <!-- Small -->
-                <img src="icons/DevexpressLogo.png" class="bubble small">
-                <img src="icons/DevopsLogo.png" class="bubble small">
-                <img src="icons/HtmlLogo.png" class="bubble small">
-            </div>
+        <div class="intro-image">
+            <img src="pfp.png" alt="Profile Picture">
         </div>
     </section>
 
-</header>
+    <!-- SKILLS / BUBBLES SECTION -->
+    <section class="skills">
+        <h2>Software I Work With</h2>
+        <div class="bubble-container" id="bubbleContainer"></div>
+    </section>
 
-<script src="bubbles.js"></script>
+    <script src="bubbles.js"></script>
 </body>
 </html>
