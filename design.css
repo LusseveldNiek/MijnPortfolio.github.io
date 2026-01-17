@@ -90,3 +90,29 @@ body {
     object-fit: contain;
     pointer-events: none;
 }
+
+.about-links {
+    margin: 60px auto 80px auto;
+    width: 70%;
+    max-width: 900px;
+}
+
+.about-links-inner p {
+    color: #ccc;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Subtle purple links */
+.about-links-inner a {
+    color: #a855f7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.about-links-inner a:hover {
+    color: #d8b4fe;
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+}
