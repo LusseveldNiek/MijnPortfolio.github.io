@@ -119,3 +119,30 @@ body {
     color: #d8b4fe;
     text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
 }
+
+.contact {
+    width: 70%;
+    max-width: 900px;
+    margin: 60px auto 80px auto;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #a855f7;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #ccc;
+    font-size: 1.05rem;
+}
+
+.contact a {
+    color: #a855f7;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+}
