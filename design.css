@@ -1,123 +1,88 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", system-ui, sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 
 body {
-    color: #0f172a;
+    background: radial-gradient(circle at top, #1b0028, #000);
+    color: #eee;
+    min-height: 100vh;
 }
 
-/* background */
-.background {
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(120deg, #cfe9ff, #e0f2ff, #b6dcff);
-    background-size: 300% 300%;
-    animation: gradientMove 15s ease infinite;
-    z-index: -1;
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* layout */
+/* INTRO */
 .intro {
-    padding: 40px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    gap: 50px;
 }
 
-/* intro card */
-.intro-container {
-    max-width: 900px;
-    width: 100%;
-    display: flex;
-    gap: 40px;
-    padding: 50px;
-    background: rgba(255,255,255,.65);
-    backdrop-filter: blur(14px);
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0,0,0,.1);
+.intro-text {
+    max-width: 600px;
 }
 
-/* profile photo */
-.pfp-frame {
-    width: 210px;
-    height: 210px;
-    padding: 4px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #4facfe, #00c6ff);
-}
-
-.pfp-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 16px;
-    background: white;
-}
-
-/* text */
 .intro-text h1 {
     font-size: 3rem;
-    background: linear-gradient(135deg, #1d4ed8, #38bdf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.accent {
+    color: #a855f7;
 }
 
 .intro-text p {
-    margin-top: 16px;
-    font-size: 1.15rem;
-    line-height: 1.7;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
 }
 
-/* sections */
+.intro-image img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 4px solid #a855f7;
+    object-fit: cover;
+}
+
+/* SKILLS SECTION */
 .skills {
-    margin-top: 140px;
-    max-width: 900px;
-    width: 100%;
+    padding: 60px 10%;
 }
 
 .skills h2 {
-    margin-bottom: 40px;
-    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #a855f7;
 }
 
-/* skills card */
-.skills-card {
-    background: rgba(255,255,255,.65);
-    backdrop-filter: blur(14px);
-    border-radius: 24px;
-    padding: 40px;
-    box-shadow: 0 20px 40px rgba(0,0,0,.1);
-}
-
-#bubble-area {
+/* WHITE CONTAINER */
+.bubble-container {
     position: relative;
+    width: 100%;
     height: 420px;
+    background: #f9f9f9;
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
 }
 
-/* bubble base */
+/* BUBBLES */
 .bubble {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255,255,255,.8);
-    padding: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.12);
-    user-select: none;
-    pointer-events: none;
-    object-fit: contain;
+    background: rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-/* sizes */
-.very-big { width: 160px; height: 160px; }
-.big      { width: 130px; height: 130px; }
-.normal   { width: 100px; height: 100px; }
-.small    { width: 75px;  height: 75px;  }
+.bubble img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    pointer-events: none;
+}
