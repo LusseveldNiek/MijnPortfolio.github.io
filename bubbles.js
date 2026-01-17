@@ -1,7 +1,7 @@
 const container = document.querySelector(".skills-physics");
-const bubbles = [...document.querySelectorAll(".skill")];
+const bubbles = [...document.querySelectorAll(".logo")];
 
-const mouse = { x: 0, y: 0, radius: 120 };
+const mouse = { x: -9999, y: -9999, radius: 120 };
 
 container.addEventListener("mousemove", e => {
     const rect = container.getBoundingClientRect();
@@ -9,11 +9,16 @@ container.addEventListener("mousemove", e => {
     mouse.y = e.clientY - rect.top;
 });
 
+container.addEventListener("mouseleave", () => {
+    mouse.x = -9999;
+    mouse.y = -9999;
+});
+
 bubbles.forEach(b => {
     b.x = Math.random() * (container.clientWidth - b.offsetWidth);
     b.y = Math.random() * (container.clientHeight - b.offsetHeight);
-    b.vx = (Math.random() - 0.5) * 1.5;
-    b.vy = (Math.random() - 0.5) * 1.5;
+    b.vx = (Math.random() - 0.5) * 1.4;
+    b.vy = (Math.random() - 0.5) * 1.4;
 });
 
 function animate() {
@@ -21,7 +26,7 @@ function animate() {
         b.x += b.vx;
         b.y += b.vy;
 
-        // walls
+        // wall collision
         if (b.x <= 0 || b.x + b.offsetWidth >= container.clientWidth) b.vx *= -1;
         if (b.y <= 0 || b.y + b.offsetHeight >= container.clientHeight) b.vy *= -1;
 
@@ -31,8 +36,9 @@ function animate() {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < mouse.radius) {
-            b.vx += dx / dist;
-            b.vy += dy / dist;
+            const force = (mouse.radius - dist) / mouse.radius;
+            b.vx += (dx / dist) * force * 0.8;
+            b.vy += (dy / dist) * force * 0.8;
         }
 
         b.style.transform = `translate(${b.x}px, ${b.y}px)`;
