@@ -163,7 +163,7 @@ body {
     padding: 14px 28px;
     font-size: 1.1rem;
     font-weight: 700;
-    color: #000000;
+    color: #ffffff !important;  
     background: linear-gradient(135deg, #a855f7, #7c3aed);
     border-radius: 999px;
     text-decoration: none;
@@ -173,6 +173,12 @@ body {
     animation: glowPulse 2s infinite ease-in-out;
 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-button:visited,
+.portfolio-button:hover,
+.portfolio-button:active {
+    color: #ffffff !important;
 }
 
 @keyframes glowPulse {
