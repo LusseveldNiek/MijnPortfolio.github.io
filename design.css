@@ -146,3 +146,32 @@ body {
 .contact a:hover {
     text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
 }
+
+.portfolio-cta {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.portfolio-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.portfolio-button {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.8);
+}
