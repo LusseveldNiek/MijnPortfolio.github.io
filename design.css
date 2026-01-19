@@ -93,10 +93,9 @@ body {
 }
 
 .about-links {
-    margin: 60px auto 80px auto;
+    margin: 20px auto 80px auto;
     width: 70%;
     max-width: 900px;
-    margin-top: 20px;
     margin-bottom: 80px;
 }
 
